@@ -1,0 +1,18 @@
+{% extends 'core/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main">
+        {% for movie in movies %}
+            <div class="container">
+              <div class="movie">
+                  <img src="{{movie.imageURL}}" alt="{{movie.title}}">
+              </div>
+              <div class="movie-info">
+                  <a href="/movie/{{movie.slug}}">{{movie.title}}</a>
+                  <span>{{movie.rating}}</span>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
